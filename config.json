@@ -1,5 +1,9 @@
 
 {
-    "record1" : "",
-    "record2"  : ""
+    "sqli" : [
+        "id",
+        "cmd",
+        "pass"
+    ],
+    "xss" : ["alert(1)"]
 }
