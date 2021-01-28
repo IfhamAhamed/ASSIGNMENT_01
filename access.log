@@ -1,0 +1,8 @@
+192.168.67.128 - - [20/Jan/2021:21:28:27 +0530] "GET / HTTP/1.1" 200 3477 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36"
+192.168.67.128 - - [20/Jan/2021:21:28:28 +0530] "GET /icons/ubuntu-logo.png HTTP/1.1" 200 3623 "http://192.168.67.128/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36"
+192.168.67.128 - - [20/Jan/2021:21:28:28 +0530] "GET /favicon.ico HTTP/1.1" 404 492 "http://192.168.67.128/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36"
+192.168.67.128 - - [20/Jan/2021:21:29:19 +0530] "-" 408 0 "-" "-"
+192.168.67.128 - - [20/Jan/2021:22:10:49 +0530] "GET / HTTP/1.1" 200 465 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36"
+192.168.67.128 - - [20/Jan/2021:22:10:49 +0530] "GET /favicon.ico HTTP/1.1" 404 483 "http://luffy/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36"
+192.168.67.128 - - [20/Jan/2021:22:11:41 +0530] "-" 408 0 "-" "-"
+192.168.67.128 - - [20/Jan/2021:22:13:20 +0530] "GET /info.php HTTP/1.1" 200 22203 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36"
