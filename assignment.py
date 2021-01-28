@@ -5,14 +5,19 @@ import os
 
 class Check_url:
 
-    gtime = ''
+    def __init__(self):
+        self._cached_stamp = 0
+        self.filename = 'access.log'
+        self.confile = 'config.json'
+        self.gtime = ''
 
     def validate_record (self, req_url):
-        file = open('config.json')
-        data = json.load(f)
+        file = open(self.confile)
+        data = json.load(file)
+        print(req_url)
 
-        for i in data['attack_check']:
-            if re.search("*id*", req_url):
+        for i in data['sqli']:
+            if re.search(i, req_url):
                 return True
                 break
 
@@ -22,14 +27,13 @@ class Check_url:
         ip = tmp[0]
         url = tmp[6]
         tim = tmp[3].split(':', 1)[1]
-        
-        #print(self.gtime, tim)
-        #print(tmp)
+
         if self.gtime != tim:
             # this is a new record
             self.gtime = tim
-            print(self.validate_record(url))
 
+            if self.validate_record(url):
+                print("[!] Detected a malicious payload ({}), blocked the IP : {}".format(url, ip))
 
     def find_last (self, fname, N):
 
@@ -48,22 +52,22 @@ class Check_url:
                     fetched_lines.extend(f.readlines()) 
     
                     if len(fetched_lines) >= N or f.tell() == 0: 
-                            # print() 
                             line = ''.join(fetched_lines[-N:])
                             self.eval_line(line)
                             break
 
+    def f_monitor(self):
+        stamp = os.stat(self.filename).st_mtime
+        if stamp != self._cached_stamp:
+            self._cached_stamp = stamp
+            self.find_last(self.filename, 1)
+
 if __name__ == '__main__': 
-      
-    fname = 'access.log'
-    N = 1
     cu = Check_url()
       
     while True:
-        try: 
-            cu.find_last(fname, 1)
-            # print(cu.gtime)
-            break
+        try:
+            cu.f_monitor()
         except Exception as e : 
             print(e)
             break
